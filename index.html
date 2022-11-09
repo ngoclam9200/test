@@ -25,15 +25,48 @@
       width: 100%;
       height: 100%;
     }
+    .container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+	background-color: #FF69B4;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+}
+
+ 
   </style>
 </HEAD>
 
 
 
 <BODY>
-  <div class="btn">
-    <button id="play">Bấm dô đây đi, có bất ngờ đấy!!!</button>
+  <div id="img" class="container">
+    <img  src="KimCuong.jpg" alt="Snow" style="width:100%">
+    <button id="play" class="btn">Bấm dô đây đi, có bất ngờ đấy!!!</button>
   </div>
+  <!-- <div class="btn">
+    <button id="play">Bấm dô đây đi, có bất ngờ đấy!!!</button>
+  </div> -->
   <audio id="autoplay" controls autoplay loop style="display: none;">
 
     <source src="test.ogg" type="audio/ogg" />
@@ -55,6 +88,7 @@
       let heart =document.getElementById('pinkboard');
         let text=document.getElementById('text');
         let box=document.getElementById('box');
+        let img =document.getElementById('img');
       let canvas= document.getElementsByTagName('canvas')
 
         play.addEventListener('click', ()=>{
@@ -69,6 +103,7 @@
           
             // box.appendChild(g);
             heart.style.display="block";
+            img.style.display="none";
 
             var canvas = document.getElementsByTagName('canvas')[0];
             canvas.width  = 750;
